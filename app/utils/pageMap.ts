@@ -1,84 +1,90 @@
-export const pagemap = [
-  { path: "", name: "Home" },
-  { path: "agg", name: "Agg" },
+export interface Page {
+  identifier: string
+  name: string
+  children?: Page[]
+}
+
+export const pageMap: Page[] = [
+  { identifier: "", name: "Home" },
+  { identifier: "agg", name: "Agg" },
   {
-    path: "check",
+    identifier: "check",
     name: "Check",
     children: [
-      { path: "file", name: "File" },
-      { path: "data", name: "Data" },
-      { path: "finder", name: "Finder" },
+      { identifier: "file", name: "File" },
+      { identifier: "data", name: "Data" },
+      { identifier: "finder", name: "Finder" },
     ],
   },
   {
-    path: "sunspot_number",
+    identifier: "sunspot_number",
     name: "Sunspot Number",
     children: [
-      { path: "agg", name: "Agg" },
+      { identifier: "agg", name: "Agg" },
       {
-        path: "whole_disk",
+        identifier: "whole_disk",
         name: "Whole Disk",
       },
       {
-        path: "hemispheric",
+        identifier: "hemispheric",
         name: "Hemispheric",
       },
       {
-        path: "with_silso",
+        identifier: "with_silso",
         name: "With SILSO",
         children: [
           {
-            path: "agg",
+            identifier: "agg",
             name: "Agg",
           },
           {
-            path: "with_silso",
+            identifier: "with_silso",
             name: "With SILSO",
           },
           {
-            path: "scatter",
+            identifier: "scatter",
             name: "Scatter",
           },
           {
-            path: "ratio",
+            identifier: "ratio",
             name: "Ratio",
           },
           {
-            path: "diff",
+            identifier: "diff",
             name: "Diff",
           },
           {
-            path: "ratio_diff_1",
+            identifier: "ratio_diff_1",
             name: "Ratio and Difference 1",
           },
           {
-            path: "ratio_diff_2",
+            identifier: "ratio_diff_2",
             name: "Ratio and Difference 2",
           },
         ],
       },
       {
-        path: "with_flare",
+        identifier: "with_flare",
         name: "With Flare Index",
         children: [
           {
-            path: "agg",
+            identifier: "agg",
             name: "Agg",
           },
           {
-            path: "with_flare",
+            identifier: "with_flare",
             name: "With Flare Index",
           },
           {
-            path: "with_flare_with_factor",
+            identifier: "with_flare_with_factor",
             name: "With Flare Index with factor",
           },
           {
-            path: "hemispheric",
+            identifier: "hemispheric",
             name: "Hemispheric",
           },
           {
-            path: "hemispheric_with_factors",
+            identifier: "hemispheric_with_factors",
             name: "Hemispheric with factors",
           },
         ],
@@ -86,86 +92,86 @@ export const pagemap = [
     ],
   },
   {
-    path: "observations",
+    identifier: "observations",
     name: "Observations",
     children: [
-      { path: "agg", name: "Agg" },
-      { path: "monthly", name: "Monthly" },
-      { path: "calendar", name: "Calendar" },
+      { identifier: "agg", name: "Agg" },
+      { identifier: "monthly", name: "Monthly" },
+      { identifier: "calendar", name: "Calendar" },
     ],
   },
   {
-    path: "butterfly",
+    identifier: "butterfly",
     name: "Butterfly Diagram",
     children: [
-      { path: "agg", name: "Agg" },
+      { identifier: "agg", name: "Agg" },
       {
-        path: "fromtext",
+        identifier: "fromtext",
         name: "From old text file",
       },
-      { path: "trim", name: "Trim" },
-      { path: "image", name: "Image" },
-      { path: "merge", name: "Merge" },
-      { path: "image_color", name: "Color Image" },
-      { path: "draw", name: "Draw" },
+      { identifier: "trim", name: "Trim" },
+      { identifier: "image", name: "Image" },
+      { identifier: "merge", name: "Merge" },
+      { identifier: "image_color", name: "Color Image" },
+      { identifier: "draw", name: "Draw" },
     ],
   },
   {
-    path: "config",
+    identifier: "config",
     name: "Config",
     children: [
       {
-        path: "sunspot_number",
+        identifier: "sunspot_number",
         name: "Sunspot Number",
         children: [
           {
-            path: "whole_disk",
+            identifier: "whole_disk",
             name: "Whole Disk",
           },
           {
-            path: "hemispheric",
+            identifier: "hemispheric",
             name: "Hemispheric",
           },
           {
-            path: "with_silso",
+            identifier: "with_silso",
             name: "With SILSO",
             children: [
               {
-                path: "with_silso",
+                identifier: "with_silso",
                 name: "With SILSO",
               },
               {
-                path: "scatter",
+                identifier: "scatter",
                 name: "Scatter",
               },
               {
-                path: "ratio",
+                identifier: "ratio",
                 name: "Ratio",
               },
               {
-                path: "diff",
+                identifier: "diff",
                 name: "Difference",
               },
               {
-                path: "ratio_diff_1",
+                identifier: "ratio_diff_1",
                 name: "Ratio and Difference 1",
               },
               {
-                path: "ratio_diff_2",
+                identifier: "ratio_diff_2",
                 name: "Ratio and Difference 2",
               },
             ],
           },
           {
-            path: "with_flare",
+            identifier: "with_flare",
             name: "With Flare Index",
             children: [
               {
-                path: "with_flare",
+                identifier: "with_flare",
                 name: "With Flare Index",
               },
               {
-                path: "hemispheric",
+                identifier: "hemispheric",
                 name: "Hemispheric",
               },
             ],
@@ -173,25 +179,25 @@ export const pagemap = [
         ],
       },
       {
-        path: "observations",
+        identifier: "observations",
         name: "Observations",
         children: [
           {
-            path: "monthly",
+            identifier: "monthly",
             name: "Monthly",
           },
         ],
       },
       {
-        path: "butterfly",
+        identifier: "butterfly",
         name: "Butterfly Diagram",
         children: [
           {
-            path: "butterfly",
+            identifier: "butterfly",
             name: "Butterfly Diagram",
           },
           {
-            path: "color_map",
+            identifier: "color_map",
             name: "Color Map",
           },
         ],
