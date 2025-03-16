@@ -1,3 +1,4 @@
+/*
 import { get } from "@/utils/fetch"
 
 type FontsRes = {
@@ -8,3 +9,4 @@ export async function getFonts(): Promise<FontsRes["names"]> {
   const res = await get<FontsRes>("/api/utils/fonts")
   return res.names
 }
+*/

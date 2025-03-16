@@ -1,16 +1,12 @@
-import { defineConfig } from "vite"
-import { svelte } from "@sveltejs/vite-plugin-svelte"
+import { defineConfig } from 'vite'
+import { sveltekit } from '@sveltejs/kit/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: "./app",
   resolve: {
-    alias: [
-      {
-        find: "@/",
-        replacement: "/",
-      },
-    ],
+    alias: [{
+      find: "@/", replacement: "/",
+    }]
   },
-  plugins: [svelte()],
+  plugins: [sveltekit()],
 })
