@@ -59,10 +59,15 @@
   const saveSubmitDisabled = $derived(outputName.trim() === "")
 
   let filesPromise = $state<ReturnType<typeof getFiles>>(getFilesConfig())
-  let fontsPromise = $state<ReturnType<typeof getFonts>>(getFonts())
+  let fontsPromise = $state<ReturnType<typeof getFonts> | undefined>(undefined)
   let configPromise = $state<ReturnType<typeof getConfig>>()
   let previewPromise = $state<ReturnType<typeof postPreview>>()
   let savePromise = $state<ReturnType<typeof postConfig>>()
+
+  // TODO: Does this work properly?
+  $effect(() => {
+    fontsPromise = getFonts()
+  })
 
   const fetchFiles = () => {
     configPromise = undefined
